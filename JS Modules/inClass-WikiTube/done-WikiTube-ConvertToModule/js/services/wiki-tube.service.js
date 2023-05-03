@@ -1,19 +1,19 @@
-
-import {storageService} from './storage.service.js'
-
+import { storageService } from './storage.service.js'
 export const wtService = {
     getVideos,
-    getWikis,
+    getWikis,    
 }
+
 const KEY = 'videosDB'
 
 function getVideos(term) {
     const termVideosMap = storageService.load(KEY) || {}
     if (termVideosMap[term]) return Promise.resolve(termVideosMap[term])
 
-    console.log('Getting from Network')
+    console.log('Getting from Network...')
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoEmbeddable=true&type=video&key=AIzaSyCp8KMTEjR9frWUGpSnc8Cw5cLVe7wRRDM&q=${term}`
     
-    return axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&videoEmbeddable=true&type=video&key=AIzaSyCp8KMTEjR9frWUGpSnc8Cw5cLVe7wRRDM&q=${term}`)
+    return axios.get(url)
         .then(res => res.data.items)
         .then(ytVideos => ytVideos.map(ytVideo => ({
             id: ytVideo.id.videoId,
@@ -29,10 +29,10 @@ function getVideos(term) {
             storageService.save(KEY, termVideosMap)
             return videos
         })
-        
 }
 
 function getWikis(term) {
-    return axios.get(`https://en.wikipedia.org/w/api.php?&origin=*&action=query&list=search&srsearch=${term}&format=json`)
+    const url = `https://en.wikipedia.org/w/api.php?&origin=*&action=query&list=search&srsearch=${term}&format=json`
+    return axios.get(url)
         .then(res => res.data.query.search.splice(0, 5))
 }

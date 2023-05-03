@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="app.onInit()">
+<body onload="onInit()">
     <header>
         <h1>WikiTube with Modules</h1>
-        <form onsubmit="app.onSearch(event)">
-            <input type="search" name="search" placeholder="Search Youtube..." value="The Beatles">
+        <form onsubmit="onSearch(event)">
+            <input type="search" name="search" placeholder="Search Youtube..." value="Charlie Chaplin">
             <button>🔍</button>
         </form>
     </header>
+
     <main class="main-content">
         <section class="search-results">
         </section>
@@ -23,6 +24,7 @@
             <iframe src="https://www.youtube.com/embed/A_MjCqQoLLA?controls=0"></iframe>
         </section>
     </main>
+    
     <section class="wiki-results-container">
         <h2>Wikis</h2>
         <section class="wiki-results">
@@ -30,6 +32,9 @@
     </section>
 
     <script src="lib/axios.js"></script>
+
+    <!-- <script src="js/services/storage.service.js"></script> -->
+    <!-- <script src="js/services/wiki-tube.service.js"></script> -->
 
     <script type="module" src="js/wiki-tube.controller.js"></script>
 
