@@ -1,0 +1,31 @@
+GitCollaborate, ExceutionModel and JS Modules 
+==========================
+GOALS
+==========================
+-. Execution-model
+-. modules  
+-. async-storage-service
+-. git collaborate
+ 
+
+LESSON FLOW
+==========================
+-. Execution-model
+-. modules
+  -. modules-proj
+     *. async-storage-service
+  -. convert wiki-tube
+  -. ex + starter review
+-. git collaborate
+
+NOTES
+-. commit before and after
+
+EX
+==========================
+Ex-TravelTip (Couples)
+
+
+
+
+
