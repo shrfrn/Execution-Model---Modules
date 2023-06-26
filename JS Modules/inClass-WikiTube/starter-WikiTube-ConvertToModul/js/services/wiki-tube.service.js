@@ -1,0 +1,36 @@
+const KEY = 'videosDB'
+
+function getVideos(term) {
+    const termVideosMap = loadFromStorage(KEY) || {}
+    if (termVideosMap[term]) return Promise.resolve(termVideosMap[term])
+
+    console.log('Getting from Network...')
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoEmbeddable=true&type=video&key=AIzaSyCp8KMTEjR9frWUGpSnc8Cw5cLVe7wRRDM&q=${term}`
+    
+    return axios.get(url)
+        .then(res => res.data.items)
+        .then(ytVideos => ytVideos.map(ytVideo => ({
+            id: ytVideo.id.videoId,
+            title: ytVideo.snippet.title,
+            img: {
+                url: ytVideo.snippet.thumbnails.default.url,
+                width: ytVideo.snippet.thumbnails.default.width,
+                height: ytVideo.snippet.thumbnails.default.height,
+            }
+        })))
+        .then(videos => {
+            termVideosMap[term] = videos
+            window.onInit = onInit
+window.onSearch = onSearch
+window.playVideo = playVideo
+
+(KEY, termVideosMap)
+            return videos
+        })
+}
+
+function getWikis(term) {
+    const url = `https://en.wikipedia.org/w/api.php?&origin=*&action=query&list=search&srsearch=${term}&format=json`
+    return axios.get(url)
+        .then(res => res.data.query.search.splice(0, 5))
+}
