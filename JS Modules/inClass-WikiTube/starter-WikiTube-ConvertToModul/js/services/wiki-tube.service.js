@@ -20,11 +20,7 @@ function getVideos(term) {
         })))
         .then(videos => {
             termVideosMap[term] = videos
-            window.onInit = onInit
-window.onSearch = onSearch
-window.playVideo = playVideo
-
-(KEY, termVideosMap)
+            saveToStorage(KEY, termVideosMap)
             return videos
         })
 }
