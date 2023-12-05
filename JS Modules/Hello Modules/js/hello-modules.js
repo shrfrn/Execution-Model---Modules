@@ -1,4 +1,4 @@
-gBaba = 'baba'
+gCount = 0
 
 function onInit() {
     strDate = Date()
@@ -6,7 +6,7 @@ function onInit() {
 }
 
 function onGo() {
-    console.log('Going...')
+    console.log('Going...', gCount++)
 
     // TODO: Call a function from a service
 }
