@@ -2,18 +2,23 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>ES6 Samples</title>
+        <link rel="stylesheet" href="css/style.css">
+        <title>CRUDL with Async Storage</title>
     </head>
 
     <body>
-        <h1>ES6 Modules</h1>
+        <h1>CRUDL with Async Storage</h1>
+
         <button onclick="onLoadPets()">Load pets</button>
+        <button onclick="onLoadPet()">Load a pet</button>
+        <button onclick="onRemovePet()">Remove a pet</button>
+        <button onclick="onAddPet()">Add a pet</button>
+        <button onclick="onUpdatePet()">Update a pet</button>
 
-        <pre class="pet-list"></pre>
+        <section class="data-container">
+            <pre class="data"></pre>
+        </section>
         
-        <!-- For libs we dont use type="module" for now -->
-        <!-- <script src="lib/some-lib.js"></script> -->
-
         <script type="module" src="js/main.js"></script>
     </body>
 </html>

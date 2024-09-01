@@ -1,22 +1,39 @@
-import { itemService } from './services/item.service.js'
 import { petService } from './services/pet.service.js'
 
-
 window.onLoadPets = onLoadPets
+window.onLoadPet = onLoadPet
+window.onRemovePet = onRemovePet
+window.onAddPet = onAddPet
+window.onUpdatePet = onUpdatePet
 
 function onLoadPets() {
     console.log('Loading pets...')
 }
 
-function renderPets(pets) {
-    const petsStr = JSON.stringify(pets, null, 4)
-    document.querySelector('.pet-list').innerText = petsStr
+function onLoadPet() {
+    // const petId = prompt('Enter pet id')
 }
 
-// Simple exaple:
+function onRemovePet() {
+    // const petId = prompt('Enter pet id')
+}
 
-// var items = itemService.getItems()
-// itemService.addItem('')
-// itemService.addItem('popo')
-// items = itemService.getItems()
-// console.log('Items', items)
+function onAddPet() {
+    // const petName = prompt('Enter pet name')
+}
+    
+function onUpdatePet() {
+    // const petId = prompt('Enter pet id')
+    // ...
+    // const score = prompt('Enter new score')
+}
+
+function render(data) {
+    const petsStr = JSON.stringify(data, null, 4)
+    document.querySelector('.data').innerText = petsStr
+}
+
+function loadPets() {
+    const pets = petService.query()
+    render(pets)
+}
