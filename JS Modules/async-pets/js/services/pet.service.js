@@ -4,25 +4,20 @@ export const petService = {
 	query,
 	get,
 	remove,
-	post,
-	put,
+    save,
 	getEmptyPet,
 }
 
 const STORAGE_KEY = 'pet'
 _createPets()
 
-function query() {
-	return loadFromStorage(STORAGE_KEY)
-}
+function query() {}
 
 function get() {}
 
 function remove() {}
 
-function post() {}
-
-function put() {}
+function save() {}
 
 function getEmptyPet(name = '', score = 0) {
 	return { id: '', name, score }

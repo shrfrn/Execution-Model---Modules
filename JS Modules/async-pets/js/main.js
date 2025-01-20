@@ -34,6 +34,5 @@ function render(data) {
 }
 
 function loadPets() {
-    const pets = petService.query()
-    render(pets)
+    // TODO: load pets, then render them
 }
