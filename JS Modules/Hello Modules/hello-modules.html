@@ -9,9 +9,12 @@
     <body onload="onInit()">
 
         <h1>Hello Modules</h1>
-        <button onclick=onGo()>Go</button>
+        <button onclick=onIncrement()>Increment Num</button>
+        <button onclick=onReset()>Reset Num</button>
 
+        <script src="js/services/util.service.js"></script>
         <script src="js/hello-modules.js"></script>
+
         <script>
             console.log('count:', gCount)
         </script>
