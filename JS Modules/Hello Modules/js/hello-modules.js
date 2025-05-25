@@ -9,7 +9,7 @@ function onInit() {
 }
 
 function onIncrement() {
-    console.log('Incrementing...', gCount++)
+    console.log('Incrementing...', ++gCount)
 
 }
 
