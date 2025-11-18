@@ -1,0 +1,31 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-inline: 2em;
+    background-color: lightgray;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1em;
+    
+    border-block-start: 1px solid gray;
+    padding-block: 1em;
+}
+
+:nth-last-child(1 of .btn-group) {
+    border-block-end: 1px solid gray;
+}
+
+.btn-group button {
+    border: none;
+    padding: 4px 8px;
+    background-color: #333;
+    border-radius: 6px;
+    
+    color: whitesmoke;
+    cursor: pointer;
+}

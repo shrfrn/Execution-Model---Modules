@@ -4,13 +4,24 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/hello-modules.css">
         <title>hello-modules</title>
     </head>
     <body onload="onInit()">
 
         <h1>Hello Modules</h1>
-        <button onclick=onIncrement()>Increment Num</button>
-        <button onclick=onReset()>Reset Num</button>
+
+        <section class="btn-group">
+            <button onclick=onIncrement()>Increment Num</button>
+            <button onclick=onReset()>Reset Num</button>
+        </section>
+
+        <section class="btn-group">
+            <button>Score ?</button>
+            <button>Score +</button>
+            <button>Score -</button>
+            <button>Score 0</button>
+        </section>
 
         <script src="js/services/util.service.js"></script>
         <script src="js/hello-modules.js"></script>
