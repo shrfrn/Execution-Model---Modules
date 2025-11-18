@@ -15,6 +15,7 @@ body {
 }
 
 pre {
+    min-height: 600px;
     padding-inline-start: 20px;
     text-align: start;
 }
